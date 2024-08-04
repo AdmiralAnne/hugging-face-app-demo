@@ -8,4 +8,4 @@ text = st.text_area=("enter your text here")
 # if text has some value then, run this code
 if text:
     output=pipe(text)
-    st.json(out)
+    st.json(output)
