@@ -7,5 +7,11 @@ st.info('coming soon')
 
 model=pipeline('sentiment-analysis')
 
-result=model("this is a test to see how well the model works")
-result
+# Create an input text box
+input_text = st.text_input("Enter your text", "")
+
+# Create a button to trigger model inference
+if st.button("Analyze"):
+    # Perform inference using the loaded model
+    result = model(input_text)
+    st.write("Prediction:", result[0]['label'], "| Score:", result[0]['score'])
